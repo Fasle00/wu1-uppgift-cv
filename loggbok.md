@@ -20,3 +20,6 @@ Figma länk https://www.figma.com/file/mEqdZ3w11dOnR0cpWzrG1H/Steve_CV?node-id=0
 
 Logg 26-10-2022
 Jag har gjort en sidebar på sidan och en header med min logo.
+
+Logg 23-11-2022
+Jag har byggt grunden och fått in texten, jag har lyckats med att länka sidebaren med delar av texten 
