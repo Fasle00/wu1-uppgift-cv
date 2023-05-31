@@ -5,61 +5,25 @@ body{
 .header{
     background-color: rgb(0, 190, 0);
     display: flex;
-    justify-content: start;
+    justify-content: center;
     max-height: 80px;
     width: 100%;
-    padding: 0;
-    margin: 0;
-    top: 0;
     z-index: 1;
+    position: relative;
 }
 .header h1{
-    color: rgb(169, 25, 25);
-    z-index: 2;
+    color: #A21A1A;
+}
+.header > a{
     position: absolute;
-    left:50%
+    left: 0;
 }
-.sidebar {
-    width:180px;
-    position: fixed;
-    z-index: 1;
-    top: 100px;
-    left: 10px;
-    background: rgb(0, 172, 17);
-    overflow-x: hidden;
+.header img{
+    margin: 5px;
+    width: auto;
+    max-height: 80px;
 }
-.sidebar a {
-    padding: 10px 0rem 10px 10px;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-    display: list-item;
-    border-color: black;
-    border-width: 4px;
-    border-top:3px;
-    border-bottom: 3px;
-    border-left: 4px;
-    border-style: solid;
-    list-style: none;
-}
-.sidebar a:hover {
-    color: blue;
-    border-color: black;
-}
-.main{
-    position: absolute;
-    left: 200px;
-    top: 90px;
-    font-size: 18px;
-    padding: 0px 20px;
-    margin-inline: auto;
-    width: min(100ch, 80vw - 2rem);
-    
-}
-p{
-    width: min(80ch, 80% - 2rem);
-}
-div{
+div {
     background: gray;
     border-width: 5px;
     border-style: solid;
@@ -67,18 +31,48 @@ div{
     border-radius: 5px;
     padding: 0 5px;
     margin: 6px;
+    max-width: 80ch;
 }
-.header img{
-    margin: 5px;
-    width: auto;
-    max-height: 70px;
+
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
-.sidebar>a>.exp{
-    border-bottom: 4px;
-    border-top: 4px;
+
+.sidebar {
+    /* ↓ The width when the sidebar _is_ a sidebar */
+    flex-basis: 20rem;
+    flex-grow: 1;
+    background-color: #0CED0C;
+    font-size: 1.5rem;
+}
+.sidebar ul {
+    list-style: none;
+    position: fixed;
+}
+.sidebar a {
+    border: 4px;
     border-style: solid;
     border-color: black;
+    display: list-item;
+    list-style: none;
+    text-decoration: none;
 }
-footer{
-    position: relative;
+.sidebar a:hover{
+    color: blue;
+    border-color: rgb(62, 62, 62);
+}
+
+.not-sidebar {
+    /* ↓ Grow from nothing */
+    flex-basis: 0;
+    flex-grow: 999;
+    /* ↓ Wrap when the elements are of equal width */
+    min-inline-size: 50%;
+}
+@media ( max-width: 671.5px ) {
+    .sidebar ul {
+        position: relative;
+    }
 }
